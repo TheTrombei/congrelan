@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Congreso de Ingenierías UDL · 2025</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --udl-green: #006A4E;
+      --udl-light-green: #90C73E;
+      --udl-grey: #4daa75;
+      --udl-bg-pale-green: #94d6b5;
+
+      --bs-primary: var(--udl-green);
+      --bs-primary-rgb: 102, 249, 147;
+
+      --bs-success: var(--udl-light-green);
+      --bs-success-rgb: 144, 199, 62;
+      
+      --bs-body-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --bs-body-font-weight: 400;
+    }
+
+    body {
+      font-family: var(--bs-body-font-family);
+      background-color: var(--udl-bg-pale-green);
+    }
+
+    .display-6 {
+      color: var(--udl-green);
+      font-weight: 700;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--udl-bg-pale-green);
+      display: inline-block;
+    }
+
+    #hero .display-4 {
+      font-weight: 900;
+      color: var(--udl-green);
+    }
+    #hero .lead {
+      color: var(--udl-green);
+      font-weight: 500;
+    }
+
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: var(--udl-green);
+      color: rgb(102, 219, 147); 
+    }
+    .accordion-button:not(.collapsed)::after {
+      filter: brightness(0) invert(1);
+    }
+
+    footer.border-top {
+      border-top: 5px solid var(--udl-green) !important;
+    }
+
+    .carousel-item img {
+      object-fit: cover;
+      height: 500px;
+    }
+    
+    img.speaker-carousel-item { 
+      object-position: center;  
+      width: 100%;             
+    }
+
+    nav.navbar {
+      background-color: #ffffff !important;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="imagenes/UDL_LogotipoColor.png" alt="Congreso Ingenierías UDL" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mainMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menú</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#charlas">Charlas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ponentes">Ponentes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section id="hero" class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-md-6">
+        <h1 class="display-4">5to Congreso de Ingenierías UDL 2025</h1>
+        <p class="lead my-4">Inteligencia, diseño y colaboración.</p>
+        <div class="d-flex gap-2">
+          <a href="#registro" class="btn btn-primary btn-lg shadow">Regístrate Ahora</a>
+          <a href="#programa" class="btn btn-outline-primary btn-lg">Ver Programa</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 text-center">
+        <img src="imagenes/foto_segundo_congreso_24.jpeg" class="img-fluid rounded-4 shadow-lg" alt="Ilustración del congreso UDL">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="charlas" class="py-5">
+  <div class="container">
+    <h2 class="text-center display-6 mb-5">Actividades Destacadas</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      
+      <div class="col">
+        <div class="card h-100 shadow border-0">
+          <img src="imagenes/colin.jpeg" class="card-img-top" alt="Taller de IA">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">IA industrial cibersegura </h5>
+            <p class="card-text">Una conferencia magistral de un experto en el area.</p>
+            <span class="badge text-bg-primary">Conferencia</span>
+          </div>
+          <div class="card-footer --udl-bg-pale-green border-0 pb-3">
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalColin">Más info</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="card h-100 shadow border-0">
+          <img src="imagenes/sanchez.jpeg" class="card-img-top" alt="Conferencia Industria 4.0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">"robots colaborativos"</h5>
+            <p class="card-text">Conferencia magistral sobre robots en la industria colaborativos.</p>
+            <span class="badge text-bg-success">Conferencia</span>
+          </div>
+          <div class="card-footer --udl-bg-pale-green border-0 pb-3">
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalSanchez">Más info</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow border-0">
+          <img src="imagenes/coxca.jpeg" class="card-img-top" alt="Charla de Software">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">inspekto: inteligencia artificial con ADN industria</h5>
+            <p class="card-text">Charla sobre cómo la ingeniería de software puede ayudar a combatir el cambio climático.</p>
+            <span class="badge text-bg-info">Conferencia</span>
+          </div>
+          <div class="card-footer --udl-bg-pale-green border-0 pb-3">
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCoxca">Más info</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ponentes" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center display-6 mb-5">Ponentes Magistrales</h2>
+    <div id="speakerCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#speakerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ponente 1"></button>
+        <button type="button" data-bs-target="#speakerCarousel" data-bs-slide-to="1" aria-label="Ponente 2"></button>
+        <button type="button" data-bs-target="#speakerCarousel" data-bs-slide-to="2" aria-label="Ponente 3"></button>
+        <button type="button" data-bs-target="#speakerCarousel" data-bs-slide-to="3" aria-label="Ponente 4"></button>
+        <button type="button" data-bs-target="#speakerCarousel" data-bs-slide-to="4" aria-label="Ponente 5"></button>
+        <button type="button" data-bs-target="#speakerCarousel" data-bs-slide-to="5" aria-label="Ponente 6"></button>
+      </div>
+      <div class="carousel-inner rounded-4 shadow-lg">
+        <div class="carousel-item active">
+          <img src="imagenes/colin.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 1">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5 class="fw-bold">Ing. oscar colin cortes</h5>
+            <p>Cybersecurity leader (Americas) Siemens</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/coxca.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 2">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5 class="fw-bold">Gilberto Coxca</h5>
+            <p>Siemens Factory automation</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/sanchez.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 3">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5 class="fw-bold">Billy Sanchez olivares</h5>
+            <p>Project manager comercial robotica leon GUREGO</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/martinez.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 4">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5 class="fw-bold">Hugo Martinez Zepeda</h5>
+            <p>CRE Aplication Enginieer mexico y Latam VIAS3D</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/macias.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 5">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5 class="fw-bold">DR. Ricardo macias jamaica</h5>
+            <p>Departamento de ingenieria quimica TECNM-Campus Celaya</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/ferro.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 6">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5 class="fw-bold">Ing. Rodolfo Ferro</h5>
+            <p>Desarrollador de inteligencia artificial y block chain - GameCoder Studios</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#speakerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#speakerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="agenda" class="py-5">
+  <div class="container">
+    <h2 class="text-center display-6 mb-5">Agenda del Evento</h2>
+    <div class="accordion shadow-sm rounded" id="agendaAcc">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingConf">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConf" aria-expanded="true" aria-controls="collapseConf">
+            <i class="bi bi-mic-fill me-2"></i> <strong>Conferencias (Auditorio Principal)</strong>
+          </button>
+        </h2>
+        <div id="collapseConf" class="accordion-collapse collapse show" aria-labelledby="headingConf" data-bs-parent="#agendaAcc">
+          <div class="accordion-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>07:00 - 07:30</strong> · Registro
+                </div>
+                <span class="badge text-bg-secondary">Lobby</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>07:45 - 08:00</strong> · Inauguración
+                </div>
+                <span class="badge text-bg-primary">Directores de carrera</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>08:00 - 08:45</strong> · Conferencia 1
+                </div>
+                <span class="badge text-bg-primary">sala comun</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>09:00 - 09:30</strong> · Desayuno
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>09:45 - 10:30</strong> · Conferencia 2
+                </div>
+                <span class="badge text-bg-primary">Sala comun</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>10:45 - 11:30</strong> · Conferencia 3
+                </div>
+                <span class="badge text-bg-primary">Sala comun</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>11:45 - 12:15</strong> · Receso 
+                </div>
+                <span class="badge text-bg-primary">Lobby</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>12:15 - 14:00</strong> · Talleres
+                </div>
+                <span class="badge text-bg-primary">Salas A,B,C,D</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTalleres">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTalleres" aria-expanded="false" aria-controls="collapseTalleres">
+            <i class="bi bi-tools me-2"></i> <strong>Talleres (Salas A, B y C)</strong>
+          </button>
+        </h2>
+        <div id="collapseTalleres" class="accordion-collapse collapse" aria-labelledby="headingTalleres" data-bs-parent="#agendaAcc">
+          <div class="accordion-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>12:15 - 14:00</strong> · Taller 
+                </div>
+                <span class="badge text-bg-warning">Sala A</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>12:15 - 14:00</strong> · Taller 
+                </div>
+                <span class="badge text-bg-warning">Sala B</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>12:1J5 - 14:00</strong> · Taller
+                </div>
+                <span class="badge text-bg-warning">Sala C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center display-6 mb-5">Galería (Sede y Eventos Anteriores)</h2>
+    <div id="galeriaCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner rounded-4 shadow-lg">
+        <div class="carousel-item active">
+          <img src="imagenes/foto_segundo_congreso_24.jpeg" class="d-block w-100" alt="Foto 1">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_22.jpeg" class="d-block w-100" alt="Foto 2">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_31.jpeg" class="d-block w-100" alt="Foto 3">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_27.jpeg" class="d-block w-100" alt="Foto 4">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_29.jpeg" class="d-block w-100" alt="Foto 5">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_32.jpeg" class="d-block w-100" alt="Foto 6">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_33.jpeg" class="d-block w-100" alt="Foto 7">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_35.jpeg" class="d-block w-100" alt="Foto 8">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_38.jpeg" class="d-block w-100" alt="Foto 9">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/foto_segundo_congreso_20.jpeg" class="d-block w-100" alt="Foto 10">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="posters" class="py-5">
+  <div class="container">
+    <h2 class="text-center display-6 mb-5">Exhibición de Pósters</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/foto_segundo_congreso_36.jpeg" class="card-img-top" alt="Póster A">
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/foto_segundo_congreso_37.jpeg" class="card-img-top" alt="Póster B">
+          <div class="card-body text-center">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programa" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="display-6 mb-4">Descarga el Programa Completo</h2>
+    <p class="lead mb-4" style="color: var(--udl-grey);">Consulta todos los horarios, ponentes y ubicaciones de talleres en el documento oficial del evento.</p>
+    <a href="imagenes/Información para Pendones Congreso de Ingenierías 2025.pdf" class="btn btn-success btn-lg shadow" download>
+      <i class="bi bi-file-earmark-arrow-down-fill me-2"></i>
+      Descargar Programa (PDF)
+    </a>
+  </div>
+</section>
+
+<section id="registro" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="text-center display-6 mb-5">Registro al Congreso</h2>
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-6">
+            <label for="regNombre" class="form-label">Nombre(s)</label>
+            <input type="text" class="form-control" id="regNombre" required>
+            <div class="invalid-feedback">
+              Por favor, ingresa tu nombre.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="regApellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="regApellidos" required>
+            <div class="invalid-feedback">
+              Por favor, ingresa tus apellidos.
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="regEmail" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="regEmail" placeholder="tu@correo.com" required>
+            <div class="invalid-feedback">
+              Formato de correo inválido.
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <label for="regCarrera" class="form-label">Carrera</label>
+            <select class="form-select" id="regCarrera" required>
+              <option value="" selected disabled>Selecciona tu carrera...</option>
+              <option value="software">Ing. en sistemas computacionales</option>
+              <option value="mecatronica">Ing. Mecatrónica</option>
+              <option value="industrial">Ing. Industrial</option>
+            </select>
+            <div class="invalid-feedback">
+              Debes seleccionar una carrera.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="regPlantel" class="form-label">Plantel</label>
+            <select class="form-select" id="regPlantel" required>
+              <option value="" selected disabled>Selecciona tu plantel...</option>
+              <option value="leon">León</option>
+              <option value="salamanca">Salamanca</option>
+              <option value="celaya">Celaya</option>
+              <option value="externo">Externo</option>
+            </select>
+            <div class="invalid-feedback">
+              Debes seleccionar un plantel.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="regConsent" required>
+              <label class="form-check-label" for="regConsent">
+                Acepto los términos y el aviso de privacidad.
+              </label>
+              <div class="invalid-feedback">
+                Debes aceptar los términos.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 text-center mt-4">
+            <button class="btn btn-primary btn-lg shadow" type="submit">
+              <i class="bi bi-send-fill me-2"></i>
+              Confirmar mi Asistencia
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="text-center display-6 mb-5">Preguntas Frecuentes (FAQ)</h2>
+        <div class="accordion accordion-flush" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq-h1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c1">
+                ¿El congreso tiene algún costo?
+              </button>
+            </h2>
+            <div id="faq-c1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                si, el costo del evento es de 850 para comunidad UDL o de 1000 para gente externa, no dudes en contactarnos para cualquier duda.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq-h2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c2">
+                ¿Dónde será el evento?
+              </button>
+            </h2>
+            <div id="faq-c2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                El evento se llevará a cabo en la sala comunal de eventos del hotel Huodson en León, Guanajuato (Sala de eventos HH1).
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq-h3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c3">
+                ¿Necesito llevar mi laptop a los talleres?
+              </button>
+            </h2>
+            <div id="faq-c3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Sí, para los talleres es indispensable traer tu propio equipo.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-4 bg-body-tertiary border-top">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <nav aria-label="breadcrumb" class="mb-2 mb-md-0">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="#hero">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="#charlas">Charlas</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Registro</li>
+      </ol>
+    </nav>
+    <small class="text-muted">
+      © 2025 Congreso de Ingenierías UDL. 
+      <span class="d-none d-lg-inline">· Universidad de León.</span>
+    </small>
+  </div>
+</footer>
+
+<div class="modal fade" id="modalColin" tabindex="-1" aria-labelledby="modalColinLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalColinLabel">Detalles: IA industrial cibersegura</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Una conferencia magistral sobre los retos y soluciones de ciberseguridad en la era de la Inteligencia Artificial industrial.</p>
+        <br>
+        <strong><i class="bi bi-person-fill me-2"></i>Ponente:</strong> Ing. Oscar Colin Cortes<br>
+        <strong><i class="bi bi-geo-alt-fill me-2"></i>Lugar:</strong> Auditorio Principal<br>
+        <strong><i class="bi bi-laptop me-2"></i>Requisitos:</strong> No se requieren (conferencia).
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalSanchez" tabindex="-1" aria-labelledby="modalSanchezLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalSanchezLabel">Detalles: Robots Colaborativos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Conferencia magistral sobre el impacto y la implementación de robots colaborativos ("cobots") en la industria moderna.</p>
+        <br>
+        <strong><i class="bi bi-person-fill me-2"></i>Ponente:</strong> Billy Sanchez Olivares<br>
+        <strong><i class="bi bi-geo-alt-fill me-2"></i>Lugar:</strong> Auditorio Principal<br>
+        <strong><i class="bi bi-laptop me-2"></i>Requisitos:</strong> No se requieren (conferencia).
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCoxca" tabindex="-1" aria-labelledby="modalCoxcaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCoxcaLabel">Detalles: Inspekto - IA con ADN Industria</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Charla sobre cómo la plataforma Inspekto utiliza inteligencia artificial diseñada específicamente para el ADN de los procesos industriales.</p>
+        <br>
+        <strong><i class="bi bi-person-fill me-2"></i>Ponente:</strong> Gilberto Coxca<br>
+        <strong><i class="bi bi-geo-alt-fill me-2"></i>Lugar:</strong> Auditorio Principal<br>
+        <strong><i class="bi bi-laptop me-2"></i>Requisitos:</strong> No se requieren (conferencia).
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalConfirmacionLabel">
+          <i class="bi bi-check-circle-fill me-2"></i> ¡Registro Exitoso!
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p class="lead">¡Gracias por registrarte!</p>
+        <p>Tus datos han sido enviados correctamente. Recibirás un correo de confirmación con tu gafete digital en las próximas 24 horas.</p>
+        <p class="text-muted small">Nos vemos en el Congreso de Ingenierías UDL 2025.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-dismiss="modal">¡Perfecto!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.needs-validation');
+  const modalConfirmEl = document.getElementById('modalConfirmacion');
+  const modalConfirm = modalConfirmEl ? new bootstrap.Modal(modalConfirmEl) : null;
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    
+    if (!form.checkValidity()) {
+      event.stopPropagation();
+    } else {
+      modalConfirm?.show();
+      form.reset();
+      form.classList.remove('was-validated');
+      return;
+    }
+    
+    form.classList.add('was-validated');
+  });
+});
+</script>
+</body>
+</html>
