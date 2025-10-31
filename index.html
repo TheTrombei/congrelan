@@ -1,26 +1,27 @@
 <!doctype html>
-<html lang="es" data-bs-theme="light">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Congreso de Ingenierías UDL · 2025</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
+    /* --- ESTILOS ORIGINALES (MODO CLARO) --- */
     :root {
       --udl-green: #006A4E;
       --udl-light-green: #90C73E;
-      --udl-grey: #4daa75;
-      --udl-bg-pale-green: #94d6b5;
+      --udl-grey: #fdfdfd;
+      --udl-bg-pale-green: #ffffff;
 
       --bs-primary: var(--udl-green);
-      --bs-primary-rgb: 102, 249, 147;
+      --bs-primary-rgb: 0, 106, 78;
 
       --bs-success: var(--udl-light-green);
       --bs-success-rgb: 144, 199, 62;
@@ -33,7 +34,7 @@
       font-family: var(--bs-body-font-family);
       background-color: var(--udl-bg-pale-green);
     }
-
+    
     .display-6 {
       color: var(--udl-green);
       font-weight: 700;
@@ -84,6 +85,28 @@
     nav.navbar {
       background-color: #ffffff !important;
     }
+
+    /* --- ESTILOS MODO FIESTA --- */
+    @keyframes fiesta-colores {
+      0% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(180deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    .fiesta-mode {
+      animation: fiesta-colores 5s linear infinite;
+    }
+    
+    /* --- [PASO 1 de 4] NUEVO: Estilo para imágenes clickables --- */
+    .clickable-image {
+      cursor: pointer;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .clickable-image:hover {
+      opacity: 0.85;
+    }
+    /* --- FIN DE ESTILOS NUEVOS --- */
+
   </style>
 </head>
 <body>
@@ -110,6 +133,10 @@
           <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
           <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
         </ul>
+        
+        <button class="btn btn-outline-danger ms-lg-3 mt-3 mt-lg-0" id="fiesta-toggle" type="button" aria-label="Activar modo fiesta">
+          <i class="bi bi-stars"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -127,7 +154,7 @@
         </div>
       </div>
       <div class="col-12 col-md-6 text-center">
-        <img src="imagenes/foto_segundo_congreso_24.jpeg" class="img-fluid rounded-4 shadow-lg" alt="Ilustración del congreso UDL">
+        <img src="imagenes/foto_segundo_congreso_24.jpeg" class="img-fluid rounded-4 shadow-lg clickable-image" alt="Ilustración del congreso UDL">
       </div>
     </div>
   </div>
@@ -140,7 +167,7 @@
       
       <div class="col">
         <div class="card h-100 shadow border-0">
-          <img src="imagenes/colin.jpeg" class="card-img-top" alt="Taller de IA">
+          <img src="imagenes/colin.jpeg" class="card-img-top clickable-image" alt="Taller de IA">
           <div class="card-body">
             <h5 class="card-title fw-bold">IA industrial cibersegura </h5>
             <p class="card-text">Una conferencia magistral de un experto en el area.</p>
@@ -154,7 +181,7 @@
       
       <div class="col">
         <div class="card h-100 shadow border-0">
-          <img src="imagenes/sanchez.jpeg" class="card-img-top" alt="Conferencia Industria 4.0">
+          <img src="imagenes/sanchez.jpeg" class="card-img-top clickable-image" alt="Conferencia Industria 4.0">
           <div class="card-body">
             <h5 class="card-title fw-bold">"robots colaborativos"</h5>
             <p class="card-text">Conferencia magistral sobre robots en la industria colaborativos.</p>
@@ -168,7 +195,7 @@
 
       <div class="col">
         <div class="card h-100 shadow border-0">
-          <img src="imagenes/coxca.jpeg" class="card-img-top" alt="Charla de Software">
+          <img src="imagenes/coxca.jpeg" class="card-img-top clickable-image" alt="Charla de Software">
           <div class="card-body">
             <h5 class="card-title fw-bold">inspekto: inteligencia artificial con ADN industria</h5>
             <p class="card-text">Charla sobre cómo la ingeniería de software puede ayudar a combatir el cambio climático.</p>
@@ -197,42 +224,42 @@
       </div>
       <div class="carousel-inner rounded-4 shadow-lg">
         <div class="carousel-item active">
-          <img src="imagenes/colin.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 1">
+          <img src="imagenes/colin.jpeg" class="d-block w-100 speaker-carousel-item clickable-image" alt="Foto Ponente 1">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5 class="fw-bold">Ing. oscar colin cortes</h5>
             <p>Cybersecurity leader (Americas) Siemens</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenes/coxca.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 2">
+          <img src="imagenes/coxca.jpeg" class="d-block w-100 speaker-carousel-item clickable-image" alt="Foto Ponente 2">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5 class="fw-bold">Gilberto Coxca</h5>
             <p>Siemens Factory automation</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenes/sanchez.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 3">
+          <img src="imagenes/sanchez.jpeg" class="d-block w-100 speaker-carousel-item clickable-image" alt="Foto Ponente 3">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5 class="fw-bold">Billy Sanchez olivares</h5>
             <p>Project manager comercial robotica leon GUREGO</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenes/martinez.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 4">
+          <img src="imagenes/martinez.jpeg" class="d-block w-100 speaker-carousel-item clickable-image" alt="Foto Ponente 4">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5 class="fw-bold">Hugo Martinez Zepeda</h5>
             <p>CRE Aplication Enginieer mexico y Latam VIAS3D</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenes/macias.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 5">
+          <img src="imagenes/macias.jpeg" class="d-block w-100 speaker-carousel-item clickable-image" alt="Foto Ponente 5">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5 class="fw-bold">DR. Ricardo macias jamaica</h5>
             <p>Departamento de ingenieria quimica TECNM-Campus Celaya</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenes/ferro.jpeg" class="d-block w-100 speaker-carousel-item" alt="Foto Ponente 6">
+          <img src="imagenes/ferro.jpeg" class="d-block w-100 speaker-carousel-item clickable-image" alt="Foto Ponente 6">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5 class="fw-bold">Ing. Rodolfo Ferro</h5>
             <p>Desarrollador de inteligencia artificial y block chain - GameCoder Studios</p>
@@ -354,34 +381,34 @@
     <div id="galeriaCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner rounded-4 shadow-lg">
         <div class="carousel-item active">
-          <img src="imagenes/foto_segundo_congreso_24.jpeg" class="d-block w-100" alt="Foto 1">
+          <img src="imagenes/foto_segundo_congreso_24.jpeg" class="d-block w-100 clickable-image" alt="Foto 1">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_22.jpeg" class="d-block w-100" alt="Foto 2">
+          <img src="imagenes/foto_segundo_congreso_22.jpeg" class="d-block w-100 clickable-image" alt="Foto 2">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_31.jpeg" class="d-block w-100" alt="Foto 3">
+          <img src="imagenes/foto_segundo_congreso_31.jpeg" class="d-block w-100 clickable-image" alt="Foto 3">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_27.jpeg" class="d-block w-100" alt="Foto 4">
+          <img src="imagenes/foto_segundo_congreso_27.jpeg" class="d-block w-100 clickable-image" alt="Foto 4">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_29.jpeg" class="d-block w-100" alt="Foto 5">
+          <img src="imagenes/foto_segundo_congreso_29.jpeg" class="d-block w-100 clickable-image" alt="Foto 5">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_32.jpeg" class="d-block w-100" alt="Foto 6">
+          <img src="imagenes/foto_segundo_congreso_32.jpeg" class="d-block w-100 clickable-image" alt="Foto 6">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_33.jpeg" class="d-block w-100" alt="Foto 7">
+          <img src="imagenes/foto_segundo_congreso_33.jpeg" class="d-block w-100 clickable-image" alt="Foto 7">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_35.jpeg" class="d-block w-100" alt="Foto 8">
+          <img src="imagenes/foto_segundo_congreso_35.jpeg" class="d-block w-100 clickable-image" alt="Foto 8">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_38.jpeg" class="d-block w-100" alt="Foto 9">
+          <img src="imagenes/foto_segundo_congreso_38.jpeg" class="d-block w-100 clickable-image" alt="Foto 9">
         </div>
         <div class="carousel-item">
-          <img src="imagenes/foto_segundo_congreso_20.jpeg" class="d-block w-100" alt="Foto 10">
+          <img src="imagenes/foto_segundo_congreso_20.jpeg" class="d-block w-100 clickable-image" alt="Foto 10">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
@@ -393,40 +420,6 @@
     </div>
   </div>
 </section>
-
-<section id="posters" class="py-5">
-  <div class="container">
-    <h2 class="text-center display-6 mb-5">Exhibición de Pósters</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/foto_segundo_congreso_36.jpeg" class="card-img-top" alt="Póster A">
-          <div class="card-body text-center">
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/foto_segundo_congreso_37.jpeg" class="card-img-top" alt="Póster B">
-          <div class="card-body text-center">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="programa" class="py-5 bg-light text-center">
-  <div class="container">
-    <h2 class="display-6 mb-4">Descarga el Programa Completo</h2>
-    <p class="lead mb-4" style="color: var(--udl-grey);">Consulta todos los horarios, ponentes y ubicaciones de talleres en el documento oficial del evento.</p>
-    <a href="imagenes/Información para Pendones Congreso de Ingenierías 2025.pdf" class="btn btn-success btn-lg shadow" download>
-      <i class="bi bi-file-earmark-arrow-down-fill me-2"></i>
-      Descargar Programa (PDF)
-    </a>
-  </div>
-</section>
-
 <section id="registro" class="py-5">
   <div class="container">
     <div class="row justify-content-center">
@@ -459,9 +452,9 @@
             <label for="regCarrera" class="form-label">Carrera</label>
             <select class="form-select" id="regCarrera" required>
               <option value="" selected disabled>Selecciona tu carrera...</option>
-              <option value="software">Ing. en sistemas computacionales</option>
+              <option value="software">Ing. en computación</option>
               <option value="mecatronica">Ing. Mecatrónica</option>
-              <option value="industrial">Ing. Industrial</option>
+              <option value="industrial">Ing. electromecánica industrial</option>
             </select>
             <div class="invalid-feedback">
               Debes seleccionar una carrera.
@@ -474,7 +467,6 @@
               <option value="leon">León</option>
               <option value="salamanca">Salamanca</option>
               <option value="celaya">Celaya</option>
-              <option value="externo">Externo</option>
             </select>
             <div class="invalid-feedback">
               Debes seleccionar un plantel.
@@ -589,7 +581,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalSanchez" tabindex="-1" aria-labelledby="modalSanchezLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -610,7 +601,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalCoxca" tabindex="-1" aria-labelledby="modalCoxcaLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -631,7 +621,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -652,18 +641,38 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Vista Previa de Imagen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="" id="imageModalSrc" class="img-fluid" alt="Imagen ampliada">
+      </div>
+    </div>
+  </div>
+</div>
+<audio id="fiesta-audio" loop>
+  <source src="imagenes/Baila Conmigo - José Madero (Instrumental) - PXNDX_José Madero_ Instrumentales y Voz.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
 
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 <script>
+// Usamos DOMContentLoaded para asegurar que todo el HTML esté cargado
 document.addEventListener('DOMContentLoaded', () => {
+  
+  // --- LÓGICA DEL FORMULARIO (Se mantiene igual) ---
   const form = document.querySelector('.needs-validation');
   const modalConfirmEl = document.getElementById('modalConfirmacion');
   const modalConfirm = modalConfirmEl ? new bootstrap.Modal(modalConfirmEl) : null;
 
   form?.addEventListener('submit', (event) => {
     event.preventDefault(); 
-    
     if (!form.checkValidity()) {
       event.stopPropagation();
     } else {
@@ -672,9 +681,68 @@ document.addEventListener('DOMContentLoaded', () => {
       form.classList.remove('was-validated');
       return;
     }
-    
     form.classList.add('was-validated');
   });
+
+  
+  // --- [PASO 4 de 4] NUEVA LÓGICA PARA IMAGEN MODAL ---
+  const imageModalEl = document.getElementById('imageModal');
+  const imageModalSrc = document.getElementById('imageModalSrc');
+  
+  // Verificamos que el modal exista en la página
+  if (imageModalEl) {
+    // Creamos una instancia del Modal de Bootstrap
+    const bsImageModal = new bootstrap.Modal(imageModalEl);
+    
+    // 1. Encontrar todas las imágenes con la clase 'clickable-image'
+    const clickableImages = document.querySelectorAll('.clickable-image');
+    
+    // 2. Añadir el listener a cada una
+    clickableImages.forEach(img => {
+      img.addEventListener('click', () => {
+        // 3. Obtener el 'src' de la imagen clickeada
+        const imgSrc = img.getAttribute('src');
+        
+        // 4. Poner ese 'src' en la imagen del modal
+        imageModalSrc.setAttribute('src', imgSrc);
+        
+        // 5. Mostrar el modal
+        bsImageModal.show();
+      });
+    });
+  }
+  // --- FIN LÓGICA IMAGEN MODAL ---
+
+
+  // --- LÓGICA PARA EL MODO FIESTA (Se mantiene igual) ---
+  const fiestaToggleBtn = document.getElementById('fiesta-toggle');
+  const fiestaIcon = fiestaToggleBtn.querySelector('i');
+  const fiestaAudio = document.getElementById('fiesta-audio');
+  const bodyElement = document.body;
+  let isFiestaMode = false;
+
+  fiestaToggleBtn.addEventListener('click', () => {
+    isFiestaMode = !isFiestaMode; 
+    if (isFiestaMode) {
+      bodyElement.classList.add('fiesta-mode');
+      fiestaAudio.play();
+      fiestaIcon.classList.remove('bi-stars');
+      fiestaIcon.classList.add('bi-pause-circle-fill');
+      fiestaToggleBtn.setAttribute('aria-label', 'Desactivar modo fiesta');
+      fiestaToggleBtn.classList.remove('btn-outline-danger');
+      fiestaToggleBtn.classList.add('btn-danger');
+    } else {
+      bodyElement.classList.remove('fiesta-mode');
+      fiestaAudio.pause();
+      fiestaAudio.currentTime = 0; 
+      fiestaIcon.classList.remove('bi-pause-circle-fill');
+      fiestaIcon.classList.add('bi-stars');
+      fiestaToggleBtn.setAttribute('aria-label', 'Activar modo fiesta');
+      fiestaToggleBtn.classList.remove('btn-danger');
+      fiestaToggleBtn.classList.add('btn-outline-danger');
+    }
+  });
+  // --- FIN DE LÓGICA DE MODO FIESTA ---
 });
 </script>
 </body>
